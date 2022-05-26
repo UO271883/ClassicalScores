@@ -27,12 +27,12 @@ data class Pieza(
 
     companion object DIFF_CALLBACK : DiffUtil.ItemCallback<Pieza>() {
         override fun areItemsTheSame(oldItem: Pieza, newItem: Pieza): Boolean {
-            return oldItem == newItem
+            return oldItem.Title == newItem.Title
         }
 
         @SuppressLint("DiffUtilEquals")
         override fun areContentsTheSame(oldItem: Pieza, newItem: Pieza): Boolean {
-            return oldItem === newItem
+            return oldItem ==  newItem
         }
     }
 }

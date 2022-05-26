@@ -33,15 +33,6 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
-
-
-        binding.fab.setOnClickListener { view ->
-            if(isOnline()) {
-                Snackbar.make(view, "Tas conectao ermano sigue asi", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-            }
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -64,8 +55,8 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+                R.id.action_settings -> true
+                else -> super.onOptionsItemSelected(item)
         }
     }
 

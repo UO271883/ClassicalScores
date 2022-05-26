@@ -1,8 +1,5 @@
 package es.uniovi.classicalscores.data
 
-import android.graphics.Bitmap
-import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
 import es.uniovi.classicalscores.network.RestApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
@@ -16,7 +13,6 @@ object Repository {
             // Se realiza la petición al servicio
             try {
                 // Respuesta correcta
-                emit(ApiResult.Loading(null))
                 val scores = RestApi.retrofitService.getScoresInfo()
                 // Se emite el estado Succes y se incluyen los datos recibidos
                 emit(ApiResult.Success(scores))

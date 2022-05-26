@@ -28,7 +28,6 @@ class ScoresListViewModel: ViewModel() {
                     when (result) {
                         is ApiResult.Success<*> -> ScoresUIState.Success(result.data!!)
                         is ApiResult.Error -> ScoresUIState.Error(result.message!!)
-                        is ApiResult.Loading<*> -> ScoresUIState.Loading()
                     }
                 }
                 .collect {
@@ -36,5 +35,4 @@ class ScoresListViewModel: ViewModel() {
                 }
         }
     }
-
 }

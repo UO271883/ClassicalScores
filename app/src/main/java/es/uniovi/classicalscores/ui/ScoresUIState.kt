@@ -22,5 +22,4 @@ sealed class ScoresUIState (val state: AppStatus) {
     }
 
     data class Error (val message: String): ScoresUIState(AppStatus.ERROR)
-    data class Loading (val loading: Boolean = true): ScoresUIState(AppStatus.LOADING)
 }
