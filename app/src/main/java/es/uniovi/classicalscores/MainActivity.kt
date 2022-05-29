@@ -3,7 +3,6 @@ package es.uniovi.classicalscores
 import android.net.ConnectivityManager
 import android.os.Build
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -13,8 +12,6 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.annotation.RequiresApi
 import es.uniovi.classicalscores.databinding.ActivityMainBinding
-import es.uniovi.classicalscores.domain.ScoresListViewModel
-import es.uniovi.classicalscores.ui.ScoresUIState
 
 class MainActivity : AppCompatActivity() {
 

@@ -10,7 +10,7 @@ class PiezasListAdapter(private val onNameSelected: (Pieza) -> Unit): ListAdapte
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PiezasViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater.inflate(R.layout.piece_list_item, parent, false )
-        return PiezasViewHolder(view){
+        return PiezasViewHolder(view) {
             onNameSelected(getItem(it))
         }
     }

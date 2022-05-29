@@ -7,10 +7,20 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="itemHolder">%1$s</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search_hint">Buscar</string>
+    <string name="TVCompositor">Compositor</string>
+    <string name="TVPais">Pais de nacimiento</string>
+    <string name="TVPieza">Pieza</string>
+    <string name="TVGenero">Género</string>
+    <string name="TVClave">Clave</string>
+    <string name="TVInstrumentos">Instrumentos</string>
+    <string name="TVModula">Modula a</string>
+    <string name="TVAno">Año</string>
+    <string name="añadidoFav">Añadido a favoritos</string>
+    <string name="eliminadoFav">Eliminado de favoritos</string>
+    <string name="TVSpecies">Especie</string>
 </resources>

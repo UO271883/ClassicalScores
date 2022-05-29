@@ -12,10 +12,12 @@ import android.view.ViewGroup
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings.PluginState
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
+import es.uniovi.classicalscores.R
 import es.uniovi.classicalscores.databinding.FragmentDetailsBinding
 import es.uniovi.classicalscores.model.Pieza
 import java.io.File
@@ -57,12 +59,22 @@ class DetailsFragment : Fragment() {
             TVTitulo.text = pieza?.Title
             TVCompositor.text = pieza?.Composer
             TVGenre.text = pieza?.Genre
-            TVInstr.text = pieza?.Inst1
+            if(pieza?.Inst2 != "") {
+                TVInstr.text = "${pieza?.Inst1}, ${pieza?.Inst2}"
+            } else TVInstr.text = pieza?.Inst1
             TVKey.text = pieza?.Key
+            if (!pieza?.Date.equals("")) {
+                TVYear.text = pieza?.Date
+            } else TVYear.text = pieza?.Range
             if(pieza?.Modulation != ""){
                 TVMod.visibility = TextView.VISIBLE
                 TVMod2.visibility = TextView.VISIBLE
                 TVMod.text = pieza?.Modulation
+            }
+            if(pieza?.Species != ""){
+                TVSpecie.visibility = TextView.VISIBLE
+                TVSpecie2.visibility = TextView.VISIBLE
+                TVSpecie.text = pieza?.Species
             }
             TVPais.text = pieza?.Nationality
             buttonViewScore.setOnClickListener {
@@ -91,17 +103,17 @@ class DetailsFragment : Fragment() {
                     }
                     file.writeText(lista_favoritos.drop(1))
                     buttonAddFav.setImageResource(android.R.drawable.ic_input_add)
-                    System.out.println("Lista borrar: " + lista_favoritos)
+                    Snackbar.make(binding.root, R.string.eliminadoFav, Snackbar.LENGTH_LONG).show()
                 }
                 else {
                     lista_favoritos += ",${TVTitulo.text}"
                     file.writeText(lista_favoritos)
                     buttonAddFav.setImageResource(android.R.drawable.btn_star_big_off)
-                    System.out.println("Lista añadir: " + lista_favoritos)
+                    Snackbar.make(binding.root, R.string.añadidoFav, Snackbar.LENGTH_LONG).show()
                 }
             }
             buttonPlayVideo.setOnClickListener{
-                val value = "https://www.youtube.com/watch?v=fgPlK7avLQ0&ab_channel=FranceMusique"
+                val value = pieza?.Video
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(value))
                 it.context.startActivity(intent)
             }

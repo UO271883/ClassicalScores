@@ -20,6 +20,7 @@ class PiezasViewHolder(itemView: View, private val onItemClicked: (Int) -> Unit)
     val picasso = Picasso.get()
     init {
         itemView.setOnClickListener{
+            // Se obtiene la posicion del adaptador sobre la que se ha pulsado
             onItemClicked(adapterPosition)
         }
     }
@@ -27,15 +28,17 @@ class PiezasViewHolder(itemView: View, private val onItemClicked: (Int) -> Unit)
         with(itemBinding){
             TvTitle.text = pieza.Title
             TvComposer.text = pieza.Composer
+            // Se carga una imagen en un ImageView haciendo uso de la libreria Picasso
             picasso.load("http://orion.atc.uniovi.es/~arias/json/Compositores/" + pieza.ComposerPic)
                 .into(imageView)
+            // Se crean los manejadores de los botones que abriran la partitura en PDF o un video
             viewScoreButton.setOnClickListener {
                 val value = "http://orion.atc.uniovi.es/~arias/json/Partituras/" + pieza.Score
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(value))
                 it.context.startActivity(intent)
             }
             buttonPlayVideo2.setOnClickListener{
-                val value = "https://www.youtube.com/watch?v=fgPlK7avLQ0&ab_channel=FranceMusique"
+                val value = pieza.Video
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(value))
                 it.context.startActivity(intent)
             }

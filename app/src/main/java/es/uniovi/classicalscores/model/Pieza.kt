@@ -22,7 +22,8 @@ data class Pieza(
     val Modulation : String,
     val Folder : String,
     val Filename : String,
-    val Score : String
+    val Score : String,
+    val Video : String
 ) {
 
     companion object DIFF_CALLBACK : DiffUtil.ItemCallback<Pieza>() {

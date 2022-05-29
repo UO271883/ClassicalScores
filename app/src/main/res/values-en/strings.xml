@@ -14,4 +14,15 @@
     <string name="itemHolder">%1$s</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search_hint">Search</string>
+    <string name="TVCompositor">Compositor</string>
+    <string name="TVPais">Country of birth</string>
+    <string name="TVPieza">Piece</string>
+    <string name="TVGenero">Genre</string>
+    <string name="TVClave">Key</string>
+    <string name="TVInstrumentos">Instruments</string>
+    <string name="TVModula">Modules to</string>
+    <string name="TVAno">Year</string>
+    <string name="añadidoFav">Added to favorties</string>
+    <string name="eliminadoFav">Removed from favorties</string>
+    <string name="TVSpecies">Species</string>
 </resources>
